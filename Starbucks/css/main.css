@@ -1,0 +1,314 @@
+/* COMMON */
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+/* inner를 수정해주기 위해 공통부분은 common으로 분리 */
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: .4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* 우선순위 점수가 10(클래스)+10(클래스) 으로 더 크기 때문에 덮어씌워짐. */
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  color: #592b18;
+  background-color: #fff;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--gold {
+  color: #d9aa8a;
+  background-color: #fff;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white {
+  color: #333;
+  background-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* HEADER */
+header {
+  /* position: relative; */
+  /* 가로넓이를 최소한으로 사용하려는 특성이 있음.(fixed, absolute) */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+  /* header가 가장 앞으로 위치하도록 높은숫자 지정. */
+  z-index: 9;
+}
+/* header의 자식요소에만 적용 */
+header > .inner {
+  height: 120px;
+}
+header .logo {
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* display: none; */
+}
+header .sub-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+/* 정확히 부모태그를 명시해주어야 함. */
+header .sub-menu ul.menu {
+  /* 메뉴 수평정렬 */
+  display: flex;
+}
+header .sub-menu ul.menu li {
+  /* Araial 폰트가 없으면 sans-serif 사용 */
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+/* 가상 요소 선택자(::) */
+header .sub-menu ul.menu li::before {
+  content: "";
+  /* display: block; */
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  /* absolute가 있으면 자동으로 block요소로 바뀌므로 따로 display 설정을 안해줘도 됨. */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before {
+  /* 첫번째 signup앞의 구분선은 안보이도록 설정. */
+  display: none;
+}
+header .sub-menu ul.menu li a {
+  /* 사용자가 클릭할 수 있는 영역 */
+  font-size: 12px;
+  padding: 11px 16px;
+  /* block요소로 바꿔주면서 사용자 편의도 증가 */
+  display: block;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+header .sub-menu .search {
+  height: 34px;
+  position: relative;
+}
+header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  /* 클릭했을 때 자동으로 생기는 테두리 */
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
+}
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: #669900;
+}
+header .sub-menu .search .material-icons {
+  /* 수직 가운데 배치 (너비 필수!!) */
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
+}
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
+}
+header .main-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* Contents부분이 보일때 맨 앞으로 가져오기 위해 쌓임순서 지정. */
+  z-index: 1;
+  /* 메뉴들 수평으로 */
+  display: flex;
+}
+header .main-menu .item {
+}
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+/* item의 이름 뿐만 아니라 contents에도 hover가 되어야 하므로 item에 붙여줌. */
+header .main-menu .item:hover .item__name {
+  background-color: #2c2a29;
+  color: #669900;
+  /* 좌,우 상단에만 적용 */
+  border-radius: 6px 6px 0 0;
+}
+header .main-menu .item .item__contents {
+  width: 100%;
+  /* top이나 bottom 속성을 사용하지 않아 수직 위치 값이 없다면, 요소의 원래 위치를 그대로 사용. */
+  /* absolute를 사용한다면 부모요소를 기준으로 하므로 뷰포트 좌우 끝까지 늘어날 수 없음. */
+  position: fixed;
+  left:0;
+  display: none;
+}
+header .main-menu .item:hover .item__contents {
+  /* hover를 했을 때 contents가 보여줄 수 있도록. */
+  display: block;
+}
+header .main-menu .item .item__contents .contents__menu {
+  background-color: #2c2a29;
+}
+/* 정확하게 자식 ul태그에만 적용됨을 명시 */
+header .main-menu .item .item__contents .contents__menu > ul{
+  display: flex;
+  padding: 20px 0;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li {
+  width: 220px;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 12px 0;
+  font-size: 14px;
+  color: #fff;
+}
+/* header .main-menu .item .item__contents .contents__menu > ul > li ul {
+} */
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+  padding: 5px 0;
+  font-size: 12px;
+  color: #999;
+  /* 마우스 포인터 변형 */
+  cursor: pointer;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  color: #669900;
+}
+header .main-menu .item .item__contents .contents__texture {
+  padding: 26px 0;
+  font-size: 12px;
+  /* 배경으로 패턴(이미지)를 삽입하면 기본값이 반복값이므로 반복적으로 나타남.  */
+  background-image: url("../images/main_menu_pattern.jpg");
+}
+header .main-menu .item .item__contents .contents__texture h4 {
+  color: #999;
+  font-weight: 700;
+}
+header .main-menu .item .item__contents .contents__texture p {
+  color: #669900;
+  margin: 4px 0 14px;
+}
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  /* 이미지가 넘치지 않도록! */
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
+}
+
+/* VISUAL SECTION */
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+}
+/* 구조를 위해서 어쩔 수 없이 넣었던 태그들은 생략가능(직접 연관 없는 것들 */
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+/* 두개의 클래스를 붙이는 일치선택자(두개의 클래스를 가지고 있어야 함. */
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0px;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0px;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  bottom: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0px;
+  left: 275px;
+}
