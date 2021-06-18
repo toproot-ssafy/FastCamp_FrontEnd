@@ -31,4 +31,4 @@ Today I Learned
 
 # Git 버전관리
 
-- Git 단축어 복습
+- Git 버전관리 복습 & 이해하기
