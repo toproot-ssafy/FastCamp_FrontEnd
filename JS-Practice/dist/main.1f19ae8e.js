@@ -118,14 +118,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 논리 연산자
-var a = 1 === 1;
-var b = 'AB' === 'AB';
-var c = true;
-console.log(a);
-console.log(b);
-console.log(c);
-console.log('&&: ');
+// 반복문 (For statement)
+// for (시작조건; 종료조건; 변화조건) {}
+for (var i = 0; i < 3; i += 1) {}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

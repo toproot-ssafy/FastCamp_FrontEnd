@@ -1,10 +1,6 @@
-// 논리 연산자
-const a = 1 === 1
-const b = 'AB' === 'AB'
-const c = true
+// 반복문 (For statement)
+// for (시작조건; 종료조건; 변화조건) {}
 
-console.log(a)
-console.log(b)
-console.log(c)
-
-console.log('&&: ')
+for (let i = 0; i < 3; i += 1) {
+  
+}
