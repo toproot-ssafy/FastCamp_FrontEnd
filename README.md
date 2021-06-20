@@ -40,3 +40,7 @@ Today I Learned
 
 
 
+
+
+# JS 함수(6/21)
+
