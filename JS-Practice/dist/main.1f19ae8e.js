@@ -118,20 +118,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 형 변환(Type conversion)
-var a = 1;
-var b = '1'; // == : 동등 연산자
-// 되도록이면 안쓰는 것 권장. 예외사황 발생(자동 형변환 발생)
-// 웬만하면 일치연산자(===) 사용하기
+// 구조 분해 할당 (Destructuring assignment)
+// 비구조화 할당
+var user = {
+  name: 'Heropy',
+  age: 85,
+  email: 'thesecon@gmail.com',
+  address: 'USA'
+}; // 객체 데이터는 이름으로 구조분해.
+// 기본값이 비어있다면 지정해줄 수 있음. address = "Korea"
+// name이라는 변수를 이름 자체로 사용하려면 : 를 사용해서 할당.
 
-console.log(a == b); // Truthy(참 같은 값)
-// true, {}, [], 1, 2, 'false', -12, '3.14' ...
-// Falsy(거짓 같은 값)
-// false, '', null, undefiend, 0, -0, NaN(Not a Number => 1 + undefined)
+var Heropy = user.name,
+    age = user.age,
+    email = user.email,
+    _user$address = user.address,
+    address = _user$address === void 0 ? "Korea" : _user$address; // E.g, user.address
 
-if ('false') {
-  console.log(123);
-}
+console.log("\uC0AC\uC6A9\uC790\uC758 \uC774\uB984\uC740 ".concat(Heropy, "\uC785\uB2C8\uB2E4."));
+console.log("".concat(Heropy, "\uC758 \uB098\uC774\uB294 ").concat(age, "\uC138 \uC785\uB2C8\uB2E4."));
+console.log("".concat(Heropy, "\uC758 \uC774\uBA54\uC77C \uC8FC\uC18C\uB294 ").concat(user.email, "\uC785\uB2C8\uB2E4."));
+console.log(address); // 배열데이터 구조할당
+
+var fruits = ['Apple', 'Banana', 'Cherry']; // 배열 순서대로 꺼내온 것
+// const [a, b, c, d] = fruits
+// console.log(a, b, c, d)
+// Banana만 꺼낸다면?
+
+var b = fruits[1];
+console.log(b);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
