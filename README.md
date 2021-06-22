@@ -48,3 +48,6 @@ Today I Learned
 
 # JS Level up! (6/22)
 
+- JS 데이터
+- JS 데이터 실습
+- 정규표현식
