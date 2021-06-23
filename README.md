@@ -57,4 +57,4 @@ Today I Learned
 # TypeScript Essentials (6/23)
 
 - TypeSciprt
-
+- Basic Types
