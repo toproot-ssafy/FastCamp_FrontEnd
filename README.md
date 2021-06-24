@@ -58,3 +58,9 @@ Today I Learned
 
 - TypeSciprt
 - Basic Types
+
+
+
+# Basic Types (6/24)
+
+- Type System
