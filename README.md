@@ -85,3 +85,6 @@ Today I Learned
 ### Interface (6/26)
 
 - Classes
+
+### Generics (6/27)
+
