@@ -88,3 +88,5 @@ Today I Learned
 
 ### Generics (6/27)
 
+- TS 복습
+
