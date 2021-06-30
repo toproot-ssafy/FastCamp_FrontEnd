@@ -1,0 +1,11 @@
+@import "./sub", "./sub2"; 
+// 확장자 없이 경로만 작성 가능.
+// 여러개 파일 import 가능.
+
+$color: royalblue;
+
+.container {
+  h1 {
+    color: $color;
+  }
+}
