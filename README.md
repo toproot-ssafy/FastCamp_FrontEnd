@@ -100,3 +100,4 @@ Today I Learned
 
 - SCSS 개요
 - SCSS 실습 (6/29)
+- 0verwatch 캐릭터 예제(6/30)
