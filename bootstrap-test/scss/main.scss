@@ -1,0 +1,18 @@
+// customize - required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  yellowgreen,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+// 전체 bootstrap 기능 가져오기(안전), 개별적으로 가져오는 것이 최적화되긴 함.
+@import "../node_modules/bootstrap/scss/bootstrap";
